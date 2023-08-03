@@ -93,4 +93,63 @@ fetch(json_url)
         video.pause();
       }
     });
+
+    let series = document.getElementById("series");
+    let películas = document.getElementById("películas");
+
+    series.addEventListener("click", () => {
+      cards.innerHTML = "";
+
+      let series_array = data.filter((ele) => {
+        return ele.type === "series";
+      });
+      series_array.forEach((ele, i) => {
+        let { name, imdb, date, sposter, bposter, genre, url } = ele;
+        let card = document.createElement("a");
+        card.classList.add("card");
+        card.href = url;
+        card.innerHTML = `
+          <img src="${sposter}" alt="${name}" class="poster">
+              <div class="rest-card">
+                <img src="${bposter}" alt="">
+                <div class="cont">
+                  <h4>${name}</h4>
+                  <div class="sub">
+                    <p>${genre}, ${date}</p>
+                    <h3><span>IMDB</span><i class="bi bi-star-fill"></i> ${imdb}</h3>
+                  </div>
+                </div>
+              </div>
+          `;
+        cards.appendChild(card);
+      });
+    });
+
+    películas.addEventListener("click", () => {
+      cards.innerHTML = "";
+
+      let películas_array = data.filter((ele) => {
+        return ele.type === "Película";
+      });
+      películas_array.forEach((ele, i) => {
+        let { name, imdb, date, sposter, bposter, genre, url } = ele;
+        let card = document.createElement("a");
+        card.classList.add("card");
+        card.href = url;
+        card.innerHTML = `
+            <img src="${sposter}" alt="${name}" class="poster">
+                <div class="rest-card">
+                  <img src="${bposter}" alt="">
+                  <div class="cont">
+                    <h4>${name}</h4>
+                    <div class="sub">
+                      <p>${genre}, ${date}</p>
+                      <h3><span>IMDB</span><i class="bi bi-star-fill"></i> ${imdb}</h3>
+                    </div>
+                  </div>
+                </div>
+            `;
+        cards.appendChild(card);
+      });
+    });
   });
