@@ -272,3 +272,48 @@ header .content .details h3 span {
 header .content .details h3 i {
   margin-right: 5px;
 }
+
+header .content .btns {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .content .btns a {
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00bdff, #0079ff);
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 10px;
+  text-decoration: none;
+  animation: button 1s linear infinite;
+}
+
+@keyframes button {
+  0% {
+    background: linear-gradient(0deg, #00bdff, #0079ff);
+  }
+  12% {
+    background: linear-gradient(45deg, #00bdff, #0079ff);
+  }
+  24% {
+    background: linear-gradient(95deg, #00bdff, #0079ff);
+  }
+  36% {
+    background: linear-gradient(145deg, #00bdff, #0079ff);
+  }
+  48% {
+    background: linear-gradient(195deg, #00bdff, #0079ff);
+  }
+  60% {
+    background: linear-gradient(245deg, #00bdff, #0079ff);
+  }
+  72% {
+    background: linear-gradient(295deg, #00bdff, #0079ff);
+  }
+  100% {
+    background: linear-gradient(360deg, #00bdff, #0079ff);
+  }
+}
